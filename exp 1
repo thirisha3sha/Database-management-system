@@ -1,0 +1,43 @@
+mysql> create database STUDENT;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use STUDENT;
+Database changed
+mysql> create table STUDENT(studentID int(20),studentNAME varchar(35),studentADDRESS varchar(40),studentCOURSEID int(10),studentCOURSENAME varchar(25));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc STUDENT;
++-------------------+-------------+------+-----+---------+-------+
+| Field             | Type        | Null | Key | Default | Extra |
++-------------------+-------------+------+-----+---------+-------+
+| studentID         | int(20)     | YES  |     | NULL    |       |
+| studentNAME       | varchar(35) | YES  |     | NULL    |       |
+| studentADDRESS    | varchar(40) | YES  |     | NULL    |       |
+| studentCOURSEID   | int(10)     | YES  |     | NULL    |       |
+| studentCOURSENAME | varchar(25) | YES  |     | NULL    |       |
++-------------------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+alter table STUDENT add(studentDOB int(8))' at line 1
+mysql> alter table STUDENT add(studentDOB int(10));
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc STUDENT;
++-------------------+-------------+------+-----+---------+-------+
+| Field             | Type        | Null | Key | Default | Extra |
++-------------------+-------------+------+-----+---------+-------+
+| studentID         | int(20)     | YES  |     | NULL    |       |
+| studentNAME       | varchar(35) | YES  |     | NULL    |       |
+| studentADDRESS    | varchar(40) | YES  |     | NULL    |       |
+| studentCOURSEID   | int(10)     | YES  |     | NULL    |       |
+| studentCOURSENAME | varchar(25) | YES  |     | NULL    |       |
+| studentDOB        | int(10)     | YES  |     | NULL    |       |
++-------------------+-------------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+
+mysql> drop table STUDENT;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> desc STUDENT;
+ERROR 1146 (42S02): Table 'student.student' doesn't exist
