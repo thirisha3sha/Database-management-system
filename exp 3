@@ -1,0 +1,33 @@
+mysql> create database DEPARTMENT;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use DEPARTMENT;
+Database changed
+
+mysql> create table DEPARTMENT(deptNo int(10),deptName varchar(15),deptHead varchar(20));
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc DEPARTMENT;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| deptNo   | int(10)     | YES  |     | NULL    |       |
+| deptName | varchar(15) | YES  |     | NULL    |       |
+| deptHead | varchar(20) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> insert into DEPARTMENT value(145,'dbms','anil');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into DEPARTMENT value(234,'math','ajay');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from DEPARTMENT;
++--------+----------+----------+
+| deptNo | deptName | deptHead |
++--------+----------+----------+
+|    145 | dbms     | anil     |
+|    234 | math     | ajay     |
++--------+----------+----------+
+2 rows in set (0.00 sec)
