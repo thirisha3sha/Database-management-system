@@ -1,0 +1,53 @@
+mysql> use COURSE;
+Database changed
+mysql> desc COURSE;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| courseNO   | varchar(3)  | YES  |     | NULL    |       |
+| courseDesc | varchar(14) | YES  |     | NULL    |       |
+| courseType | char(3)     | YES  |     | NULL    |       |
+| semNo      | char(3)     | YES  |     | NULL    |       |
+| hallNo     | char(4)     | YES  |     | NULL    |       |
+| facNo      | varchar(17) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+mysql>  insert into COURSE values(234,'dbms','cod',4,678,5678);
+Query OK, 1 row affected (0.00 sec)
+mysql> insert into COURSE values(434,'dbms','cod',3,608,6788);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from COURSE;
++----------+------------+------------+-------+--------+-------+
+| courseNO | courseDesc | courseType | semNo | hallNo | facNo |
++----------+------------+------------+-------+--------+-------+
+| 34       | dbms       | cod        | 2     | 2345   | 5434  |
+| 234      | dbms       | cod        | 4     | 678    | 5678  |
+| 434      | dbms       | cod        | 3     | 608    | 6788  |
++----------+------------+------------+-------+--------+-------+
+3 rows in set (0.00 sec)
+
+mysql> update COURSE set courseNo='45' where courseType='cod';
+Query OK, 3 rows affected (0.00 sec)
+Rows matched: 3  Changed: 3  Warnings: 0
+
+mysql>  select *from COURSE;
++----------+------------+------------+-------+--------+-------+
+| courseNO | courseDesc | courseType | semNo | hallNo | facNo |
++----------+------------+------------+-------+--------+-------+
+| 45       | dbms       | cod        | 2     | 2345   | 5434  |
+| 45       | dbms       | cod        | 4     | 678    | 5678  |
+| 45       | dbms       | cod        | 3     | 608    | 6788  |
++----------+------------+------------+-------+--------+-------+
+3 rows in set (0.00 sec)
+mysql> delete from COURSE where semNo=4;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select *from COURSE;
++----------+------------+------------+-------+--------+-------+
+| courseNO | courseDesc | courseType | semNo | hallNo | facNo |
++----------+------------+------------+-------+--------+-------+
+| 45       | dbms       | cod        | 2     | 2345   | 5434  |
+| 45       | dbms       | cod        | 3     | 608    | 6788  |
++----------+------------+------------+-------+--------+-------+
+2 rows in set (0.00 sec)
