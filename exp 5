@@ -1,0 +1,60 @@
+mysql> use Employee
+Database changed
+mysql> desc Employee;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| id     | varchar(34) | YES  |     | NULL    |       |
+| name   | varchar(34) | YES  |     | NULL    |       |
+| city   | varchar(24) | YES  |     | NULL    |       |
+| salary | varchar(25) | YES  |     | NULL    |       |
+| age    | varchar(3)  | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> select *from Employee;
++------+---------------+---------+--------+------+
+| id   | name          | city    | salary | age  |
++------+---------------+---------+--------+------+
+| 1    | priya         | nasik   | 26000  | 20   |
+| 2    | priya chaudri | mumbai  | 76000  | 28   |
+| 3    | varsha        | chennai | 35000  | 21   |
++------+---------------+---------+--------+------+
+3 rows in set (0.00 sec)
+
+mysql> select count(name) from Employee;
++-------------+
+| count(name) |
++-------------+
+|           3 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) from Employee where salary>=35000;
++----------+
+| count(*) |
++----------+
+|        2 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select *from Employee where age between 20 and 25;
++------+--------+---------+--------+------+
+| id   | name   | city    | salary | age  |
++------+--------+---------+--------+------+
+| 1    | priya  | nasik   | 26000  | 20   |
+| 3    | varsha | chennai | 35000  | 21   |
++------+--------+---------+--------+------+
+2 rows in set (0.00 sec)
+
+mysql> select *from Employee where city in(nasik,chennai,mumbai);
+ERROR 1054 (42S22): Unknown column 'nasik' in 'where clause'
+mysql> select *from Employee where age in (20,28,21);
++------+---------------+---------+--------+------+
+| id   | name          | city    | salary | age  |
++------+---------------+---------+--------+------+
+| 1    | priya         | nasik   | 26000  | 20   |
+| 2    | priya chaudri | mumbai  | 76000  | 28   |
+| 3    | varsha        | chennai | 35000  | 21   |
++------+---------------+---------+--------+------+
+3 rows in set (0.00 sec)
