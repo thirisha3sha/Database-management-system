@@ -1,0 +1,51 @@
+mysql> use Employee;
+Database changed
+mysql> select *from Employee;
++------+---------------+---------+--------+------+
+| id   | name          | city    | salary | age  |
++------+---------------+---------+--------+------+
+| 1    | priya         | nasik   | 26000  | 20   |
+| 2    | priya chaudri | mumbai  | 76000  | 28   |
+| 3    | varsha        | chennai | 35000  | 21   |
++------+---------------+---------+--------+------+
+3 rows in set (0.00 sec)
+
+mysql> select name,max(age) from Employee group by name;
++---------------+----------+
+| name          | max(age) |
++---------------+----------+
+| priya         | 20       |
+| priya chaudri | 28       |
+| varsha        | 21       |
++---------------+----------+
+3 rows in set (0.01 sec)
+
+mysql> select name,max(salary) from Employee group by name having max(salary)>=25000;
++---------------+-------------+
+| name          | max(salary) |
++---------------+-------------+
+| priya         | 26000       |
+| priya chaudri | 76000       |
+| varsha        | 35000       |
++---------------+-------------+
+3 rows in set (0.00 sec)
+
+mysql> select *from Employee order by name;
++------+---------------+---------+--------+------+
+| id   | name          | city    | salary | age  |
++------+---------------+---------+--------+------+
+| 1    | priya         | nasik   | 26000  | 20   |
+| 2    | priya chaudri | mumbai  | 76000  | 28   |
+| 3    | varsha        | chennai | 35000  | 21   |
++------+---------------+---------+--------+------+
+3 rows in set (0.00 sec)
+
+mysql> select *from Employee order by name desc;
++------+---------------+---------+--------+------+
+| id   | name          | city    | salary | age  |
++------+---------------+---------+--------+------+
+| 3    | varsha        | chennai | 35000  | 21   |
+| 2    | priya chaudri | mumbai  | 76000  | 28   |
+| 1    | priya         | nasik   | 26000  | 20   |
++------+---------------+---------+--------+------+
+3 rows in set (0.00 sec)
