@@ -1,0 +1,17 @@
+create database prime;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use prime;
+Database changed
+mysql> create table prime(customerid int(13),customername varchar(23),orderno int(23),primary key(customerid));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc prime;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| customerid   | int(13)     | NO   | PRI | 0       |       |
+| customername | varchar(23) | YES  |     | NULL    |       |
+| orderno      | int(23)     | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+3 rows in set (0.02 sec)
