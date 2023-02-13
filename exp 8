@@ -1,0 +1,55 @@
+Enter password: ********
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 65
+Server version: 5.5.62 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use Employeee;
+Database changed
+mysql> select *from Employeee;
++------------+--------------+---------+
+| employeeid | employeename | orderno |
++------------+--------------+---------+
+| 45         | ganesh       |      67 |
+| 445        | vimal        |      87 |
+| 545        | keerthi      |     656 |
+| 245        | dhanush      |      31 |
+| 90         | harini       |     777 |
+| 23         | tarun        |     456 |
+| 356        | vijay        |     486 |
+| 13         | dhanush      |     266 |
+| 6783       | ,manasa      |     787 |
+| 96         | vignesh      |     123 |
+| 23         | tarun        |       3 |
+| 32         | dhanush      |       3 |
+| 562        | nithin       |     453 |
+| 76         | charwin      |      43 |
+| 10         | vidhush      |     243 |
+| 124        | siva         |      53 |
++------------+--------------+---------+
+16 rows in set (0.00 sec)
+
+mysql> select employeename,employeeid,orderno from Employeee where employeeid=(select max(employeeid)from Employeee);
++--------------+------------+---------+
+| employeename | employeeid | orderno |
++--------------+------------+---------+
+| vignesh      | 96         |     123 |
++--------------+------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select max(employeeid) from Employeee where orderno>=100;
++-----------------+
+| max(employeeid) |
++-----------------+
+| 96              |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql>
